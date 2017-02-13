@@ -49,11 +49,14 @@ var products = [
   }
 ];
 
-var i;
 
-for (i=0; i < products.length; i++){
-    console.log(products[i].name + " $" + products[i].price);  
+function capture(){
+  console.log(document.selectForm.filter.value);
+  event.preventDefault();
 }
 
-
-
+//var i;
+//
+//for (i=0; i < products.length; i++){
+//    console.log(products[i].name + " $" + products[i].price);  
+//}
