@@ -7,6 +7,7 @@
 
   <link rel="stylesheet" href="styles/reset.css">
   <link rel="stylesheet" href="styles/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 
   <!-- replace with your personal Font Awesome CDN link -->
   <script src="https://use.fontawesome.com/0aebed106c.js"></script>
@@ -15,6 +16,7 @@
 <body>
   <header>
     <nav>
+      <h1>Winter Wear Warehouse</h1>
       <ul>
         <li><a href="#">Hats</a></li>
         <li><a href="#">Gloves</a></li>
@@ -24,12 +26,10 @@
         </li>
       </ul>
     </nav>
-
-    <h1>Winter Wear Warehouse</h1>
   </header>
 
   <aside>
-    <form>
+    <form name="selectForm" onsubmit="capture();">
       <label>Filter By:
         <select name="filter">
           <option value="">Choose One</option>
@@ -37,24 +37,60 @@
           <option value="name">Name</option>
         </select>
       </label>
-
       <input type="submit" value="Sort">
     </form>
   </aside>
-
+  
   <section>
     <h2>Scarves</h2>
 
     <div class="item-container">
       <div class="item">
-        <h3>Ashby Twil Scarf</h3>
+        <h3>Wool Cable Knit</h3>
+        <h4>&#36;49.99</h4>
+        <p>Warm yourself with this women's natural cable knit scarf, crafted from 100% Merino wool. Imported.</p>
+        <img src="images/wool-cable.jpeg" alt="Wool Cable Knit scarf" height="200"/>
+      </div>
+      <div class="item">
+        <h3>Northern Lights</h3>
+        <h4>&#36;29.99</h4>
+        <p>Handmade by women in Agra, sales provide medical and educational support in this remote area of India. Crinkly 100% cotton.</p>
+        <img src="images/northern-lights.jpg" alt="Northern Lights scarf" height="200"/>
+      </div>
+      <div class="item">
+        <h3>Ombre Infinity</h3>
+        <h4>&#36;11.99</h4>
+        <p>A dip-dye effect adds color and dimension to a cozy infinity scarf featuring a soft, chunky knit. 100% acrylic.</p>
+        <img src="images/ombre-infinity.jpg" alt="Ombre Infinity scarf" height="200"/>
+      </div>
+      <div class="item">
+        <h3>Fringed Plaid</h3>
+        <h4>&#36;18.99</h4>
+        <p>Generously sized, extra soft and featuring a dazzling fringe, this scarf is rendered in a versatile gray, black and white plaid. Expertly beat the cold with style. 100% acrylic.</p>
+        <img src="images/fringed-plaid.jpeg" alt="Fringed Plaid scarf" height="200"/>
+      </div>
+      <div class="item">
+        <h3>Multi Color</h3>
+        <h4>&#36;22.99</h4>
+        <p>The Who What Wear Oversize Color-Block Square Scarf is big, bold, and designed to twist and wrap any way you wish. All the colors of the season are harmonized in this oversize accent, so you can adjust to contrast or match your outfit; soft and lush, it’s your stylish standoff against cold AC and unexpected fall breezes. 100% acrylic.</p>
+        <img src="images/multi-color.jpeg" alt="Multi Color scarf" height="200"/>
+      </div>
+      <div class="item">
+        <h3>Etro Paisley-Print Silk</h3>
+        <h4>&#36;249.99</h4>
+        <p>Luxurious silk scarf with subtle paisley pattern. 100% silk.</p>
+        <img src="images/etro.png" alt="Etro silk scarf" height="200"/>
+      </div>
+      <div class="item">
+        <h3>Ashby Twil</h3>
         <h4>&#36;70.99</h4>
         <p>Faribault brings you the Ashby Twill Scarf in Natural. Woven with a 'broken' twill technique, the Ashby Twill Scarf has a slight zigzag texture. Made in USA, this timeless scarf is crafted with luxurious merino wool and finished with heather gray fringe. 100% Merino wool.</p>
         <img src="images/twill.jpg" alt="Twill scarf" height="200"/>
       </div>
     </div>
   </section>
-
+  
+  <footer>&copy; Stinson Design 2017</footer>
   <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
