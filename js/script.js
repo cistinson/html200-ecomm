@@ -49,14 +49,27 @@ var products = [
   }
 ];
 
+function sumPrices(cartArray){
+  
+  var total=0;
+  //TO DO: trigger on change of cart contents  
+  for(var i=0; i < cartArray.length; i++){
+    console.log(cartArray[i].price);
+    
+    total = total + cartArray[i].price;
+  };
+  //TO DO: print total as HTML to page, next to cart icon
+  console.log(total);
+  
+}
 
 function capture(){
   console.log(document.selectForm.filter.value);
   event.preventDefault();
 }
 
-//var i;
-//
-//for (i=0; i < products.length; i++){
-//    console.log(products[i].name + " $" + products[i].price);  
-//}
+var i;
+
+for (i=0; i < products.length; i++){
+    console.log(products[i].name + " $" + products[i].price);  
+}
