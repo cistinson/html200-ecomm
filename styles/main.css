@@ -102,6 +102,25 @@ footer{
   padding:1rem;
 }
 
+input.addButton, input.removeButton{
+  margin:2% 1% 0 0;;
+  cursor:pointer;
+  font-family: 'Oswald', sans-serif;
+  border: 0.15rem solid #999999;
+  border-radius:0.25rem;
+  float:left;
+}
+
+.addButton:hover{
+  background-color:lightgreen;
+  display: inline-block;
+}
+
+.removeButton:hover{
+  background-color:#f53b5a;
+  display:inline-block;
+}
+
 @media (max-width:320px){
   nav ul{
     width:100%;
