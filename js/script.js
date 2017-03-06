@@ -49,6 +49,27 @@ var products = [
   }
 ];
 
+var cart=[];
+
+function addToCart(productID){
+  var newItem = [products[productID].name + " " +products[productID].price];
+  cart.push(newItem);
+  console.log(cart);
+  console.log("Your cart has " + cart.length + " items in it!");
+  event.preventDefault();
+}
+
+//function removeFromCart(itemName){
+//  var index = cart.indexOf(itemName);
+//    if (index >= 0){
+//    console.log("your item has been removed!");
+//  }
+//  console.log(cart);
+//  console.log("Your cart has " + cart.length + " items in it!");
+//  event.preventDefault();
+//} 
+
+
 function sumPrices(cartArray){
   
   var total=0;
@@ -67,9 +88,9 @@ function capture(){
   console.log(document.selectForm.filter.value);
   event.preventDefault();
 }
-
-var i;
-
-for (i=0; i < products.length; i++){
-    console.log(products[i].name + " $" + products[i].price);  
-}
+//
+//var i;
+//
+//for (var i=0; i < products.length; i++){
+//    console.log(products[i].name + " $" + products[i].price);  
+//}
