@@ -57,10 +57,10 @@ function cartChange(name){
 
   if (index >= 0) {
     cart.splice(index, 1);
-    alert('item has been removed from cart!');
+    alert('Item has been removed from cart! There are currently ' + cart.length + 'items in your cart.');
   } else {
     cart.push(name);
-    alert('item has been added to cart!');
+    alert('Item has been added to cart! There are currently ' + cart.length + 'items in your cart.');
   }
    console.log(cart);
    event.preventDefault();
