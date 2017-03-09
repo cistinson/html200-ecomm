@@ -51,46 +51,55 @@ var products = [
 
 var cart=[];
 
-function addToCart(productID){
-  var newItem = [products[productID].name + " " +products[productID].price];
-  cart.push(newItem);
-  console.log(cart);
-  console.log("Your cart has " + cart.length + " items in it!");
-  event.preventDefault();
-}
+function cartChange(name){
 
-//function removeFromCart(itemName){
-//  var index = cart.indexOf(itemName);
-//    if (index >= 0){
-//    console.log("your item has been removed!");
-//  }
-//  console.log(cart);
-//  console.log("Your cart has " + cart.length + " items in it!");
-//  event.preventDefault();
-//} 
+  var index = cart.indexOf(name);
 
+  if (index >= 0) {
+    cart.splice(index, 1);
+    alert('item has been removed from cart!');
+  } else {
+    cart.push(name);
+    alert('item has been added to cart!');
+  }
+   console.log(cart);
+   event.preventDefault();
+};
 
-function sumPrices(cartArray){
+function priceComp(a, b){
+  return (a.price - b.price);
+};
+function nameComp(a, b){
+  return (a.name > b.name);
+};
+
+function capture() {
   
-  var total=0;
-  //TO DO: trigger on change of cart contents  
-  for(var i=0; i < cartArray.length; i++){
-    console.log(cartArray[i].price);
-    
-    total = total + cartArray[i].price;
-  };
-  //TO DO: print total as HTML to page, next to cart icon
-  console.log(total);
+  var filter = document.getElementById("filter");
+  var selection = filter.options[filter.selectedIndex].value;
   
-}
-
-function capture(){
-  console.log(document.selectForm.filter.value);
+  if(selection=="price"){
+    products.sort(priceComp);
+  }
+  else if (selection=="name") {
+    products.sort(nameComp);
+ }
+  console.log(products);
   event.preventDefault();
-}
-//
-//var i;
-//
-//for (var i=0; i < products.length; i++){
-//    console.log(products[i].name + " $" + products[i].price);  
+};
+
+
+//function sumPrices(cartArray){
+//  
+//  var total=0;
+//  //TO DO: trigger on change of cart contents  
+//  for(var i=0; i < cartArray.length; i++){
+//    console.log(cartArray[i].price);
+//    
+//    total = total + cartArray[i].price;
+//  };
+//  //TO DO: print total as HTML to page, next to cart icon
+//  console.log(total);
+//  
 //}
+
