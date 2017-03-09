@@ -102,17 +102,19 @@ footer{
   padding:1rem;
 }
 
-input.addButton, input.removeButton{
+.cartButton{
   margin:2% 1% 0 0;;
   cursor:pointer;
   font-family: 'Oswald', sans-serif;
+  font-size:1rem;
   border: 0.15rem solid #999999;
   border-radius:0.25rem;
   float:left;
 }
 
-.addButton:hover{
+.cartButton:hover{
   background-color:lightgreen;
+  border-color:red;
   display: inline-block;
 }
 
