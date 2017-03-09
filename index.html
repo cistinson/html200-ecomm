@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="styles/main.css">
   <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 
-  <!-- replace with your personal Font Awesome CDN link -->
   <script src="https://use.fontawesome.com/0aebed106c.js"></script>
 </head>
 
@@ -31,10 +30,10 @@
   <aside>
     <form name="selectForm" onsubmit="capture();">
       <label>Filter By:
-        <select name="filter">
+        <select id="filter">
           <option value="">Choose One</option>
-          <option value="price">Price</option>
-          <option value="name">Name</option>
+          <option name="choice" value="price">Price</option>
+          <option name="choice" value="name">Name</option>
         </select>
       </label>
       <input type="submit" value="Sort">
@@ -47,12 +46,9 @@
         <h3>Wool Cable Knit</h3>
         <h4>&#36;49.99</h4>
         <p>Warm yourself with this women's natural cable knit scarf, crafted from 100% Merino wool. Imported.</p>
-        <form onSubmit="addToCart(0)" name="cartAdd">
-          <input type="submit" value="Add to cart" class="addButton">
-        </form>
-        <form onSubmit="removeFromCart()" name="cartRemove">
-          <input type="submit" value="Remove from cart" class="removeButton">
-        </form>              
+        <form onSubmit="cartChange('Wool Cable Knit')">
+          <input type="submit" value="+ / - from cart" class="cartButton">
+        </form>             
         <img srcset="images/wool-cable_492.jpg 492w, images/wool-cable_350.jpg 350w, images/wool-cable_200.jpg 200w"
              sizes="(max-width: 800px) 200px, (max-width: 1600px) 350px, (min-width: 1601px) 492px"
              src="images/wool-cable_350.jpg"
@@ -63,12 +59,9 @@
         <h3>Northern Lights</h3>
         <h4>&#36;29.99</h4>
         <p>Handmade by women in Agra, sales provide medical and educational support in this remote area of India. Crinkly 100% cotton.</p>
-        <form onSubmit="addToCart(1)" name="cartAdd">
-          <input type="submit" value="Add to cart" class="addButton">
-        </form>
-        <form onSubmit="removeToCart()" name="cartRemove">
-          <input type="submit" value="Remove from cart" class="removeButton">
-        </form>       
+        <form onSubmit="cartChange('Northern Lights')">
+          <input type="submit" value="+ / - from cart" class="cartButton">
+        </form>          
         <img srcset="images/northern-lights_492.jpg 492w, images/northern-lights_350.jpg 350w, images/northern-lights_200.jpg 200w"
              sizes="(max-width: 800px) 200px, (max-width: 1600px) 350px, (min-width: 1601px) 492px"
              src="images/northern-lights.jpg" 
@@ -78,12 +71,9 @@
         <h3>Ombre Infinity</h3>
         <h4>&#36;11.99</h4>
         <p>A dip-dye effect adds color and dimension to a cozy infinity scarf featuring a soft, chunky knit. 100% acrylic.</p>
-        <form onSubmit="addToCart(2)" name="cartAdd">
-          <input type="submit" value="Add to cart" class="addButton">
-        </form>
-        <form onSubmit="removeToCart()" name="cartRemove">
-          <input type="submit" value="Remove from cart" class="removeButton">
-        </form>       
+        <form onSubmit="cartChange('Ombre Infinity')">
+          <input type="submit" value="+ / - from cart" class="cartButton">
+        </form>          
         <img srcset="images/ombre-infinity_492.jpg 492w, images/ombre-infinity_350.jpg 350w, images/ombre-infinity_200.jpg 200w"
              sizes="(max-width: 800px) 200px, (max-width: 1600px) 350px, (min-width: 1601px) 492px"
              src="images/ombre-infinity.jpg"
@@ -93,12 +83,9 @@
         <h3>Fringed Plaid</h3>
         <h4>&#36;18.99</h4>
         <p>Generously sized, extra soft and featuring a dazzling fringe, this scarf is rendered in a versatile gray, black and white plaid. Expertly beat the cold with style. 100% acrylic.</p>
-        <form onSubmit="addToCart(3)" name="cartAdd">
-          <input type="submit" value="Add to cart" class="addButton">
-        </form>
-        <form onSubmit="removeToCart()" name="cartRemove">
-          <input type="submit" value="Remove from cart" class="removeButton">
-        </form>         
+        <form onSubmit="cartChange('Fringed Plaid')">
+          <input type="submit" value="+ / - from cart" class="cartButton">
+        </form>           
         <img srcset="images/fringed-plaid_492.jpg 492w, images/fringed-plaid_350.jpg 350w, images/fringed-plaid_200.jpg 200w"
              sizes="(max-width: 800px) 200px, (max-width: 1600px) 350px, (min-width: 1601px) 492px"
              src="images/fringed-plaid_492.jpg"            
@@ -108,12 +95,9 @@
         <h3>Multi Color</h3>
         <h4>&#36;22.99</h4>
         <p>The Who What Wear Oversize Color-Block Square Scarf is big, bold, and designed to twist and wrap any way you wish. All the colors of the season are harmonized in this oversize accent, so you can adjust to contrast or match your outfit; soft and lush, it’s your stylish standoff against cold AC and unexpected fall breezes. 100% acrylic.</p>
-        <form onSubmit="addToCart(4)" name="cartAdd">
-          <input type="submit" value="Add to cart" class="addButton">
-        </form>
-        <form onSubmit="removeToCart()" name="cartRemove">
-          <input type="submit" value="Remove from cart" class="removeButton">
-        </form>       
+        <form onSubmit="cartChange('Multi Color')">
+          <input type="submit" value="+ / - from cart" class="cartButton">
+        </form>         
         <img srcset="images/multi-color_492.jpg 492w, images/multi-color_350.jpg 350w, images/multi-color_200.jpg 200w"
              sizes="(max-width: 800px) 200px, (max-width: 1600px) 350px, (min-width: 1601px) 492px"             
              src="images/multi-color_492.jpg"
@@ -123,12 +107,9 @@
         <h3>Etro Paisley-Print Silk</h3>
         <h4>&#36;249.99</h4>
         <p>Luxurious silk scarf with subtle paisley pattern. 100% silk.</p>
-        <form onSubmit="addToCart(5)" name="cartAdd">
-          <input type="submit" value="Add to cart" class="addButton">
-        </form>
-        <form onSubmit="removeToCart()" name="cartRemove">
-          <input type="submit" value="Remove from cart" class="removeButton">
-        </form>       
+        <form onSubmit="cartChange('Etro Paisley-Print Silk')">
+          <input type="submit" value="+ / - from cart" class="cartButton">
+        </form>          
         <img srcset="images/etro_492.jpg 492w, images/etro_350.jpg 350w, images/etro_200.jpg 200w"
              sizes="(max-width: 800px) 200px, (max-width: 1600px) 350px, (min-width: 1601px) 492px"             
              src="images/etro_492.jpg"
@@ -138,12 +119,9 @@
         <h3>Ashby Twil</h3>
         <h4>&#36;70.99</h4>
         <p>Faribault brings you the Ashby Twill Scarf in Natural. Woven with a 'broken' twill technique, the Ashby Twill Scarf has a slight zigzag texture. Made in USA, this timeless scarf is crafted with luxurious merino wool and finished with heather gray fringe. 100% Merino wool.</p>
-        <form onSubmit="addToCart(6)" name="cartAdd">
-          <input type="submit" value="Add to cart" class="addButton">
-        </form>
-        <form onSubmit="removeFromCart()" name="cartRemove">
-          <input type="submit" value="Remove from cart" class="removeButton">
-        </form>        
+        <form onSubmit="cartChange('Ashby Twil')">
+          <input type="submit" value="+ / - from cart" class="cartButton">
+        </form>           
         <img srcset="images/twill_492.jpg 492w, images/twill_350.jpg 350w, images/twill_200.jpg 200w"
              sizes="(max-width: 800px) 200px, (max-width: 1600px) 350px, (min-width: 1601px) 492px"
              src="images/twill_492.jpg"
