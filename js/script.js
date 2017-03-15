@@ -54,7 +54,8 @@ var cart=[];
 function cartChange(name){
 
   var index = cart.indexOf(name);
-
+  var cartNumber = document.getElementById("cartCounter");
+    
   if (index >= 0) {
     cart.splice(index, 1);
     alert('Item has been removed from cart! There are currently ' + cart.length + ' items in your cart.');
@@ -64,6 +65,7 @@ function cartChange(name){
   }
    console.log(cart);
    event.preventDefault();
+   cartNumber.innerHTML= cart.length + " items";
 };
 
 function priceComp(a, b){
